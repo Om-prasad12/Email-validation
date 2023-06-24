@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email validation</title>
+    <script>
+        function valid(){
+            var email=document.getElementById("text").value;
+            var regex=/^\d{3}(bt|bm|ch|cs|cr|mm|mn|ee|ei|ec|me|ce|fp|id|ma|ph|ls|cy)\d{4}@(nitrkl.co.in){1}/gi
+
+            var brCode=email.slice(3,5);
+            let branch;
+switch(brCode) {
+  case "cs":
+    branch = "computer science";
+    break;
+  case "ec":
+    branch = "Electronics and communication";
+    break;
+  case "ei":
+    branch = "Electronics and instrumentation";
+    break;
+  case "ee":
+    branch = "Electrical";
+    break;
+  case "me":
+    branch = "Mechanical";
+    break;
+  case "ch":
+    branch = "Chemical";
+    break;
+  case  "ce":
+    branch = "Civil";
+    break;
+    case "mm":
+    branch = "Metalurgy";
+    break;
+    case "mn":
+    branch = "Mining";
+    break;
+    case "cr":
+    branch = "Ceramic";
+    break;
+    case "id":
+    branch = "Industrial designing";
+    break;
+    case "fp":
+    branch = "Food processing";
+    break;
+    case "ma":
+    branch = "Mathematics";
+    break;
+    case "ph":
+    branch = "Physics";
+    break;
+    case "cy":
+    branch = "Chemistry";
+    break;
+    case "ls":
+    branch = "Life science";
+    break;
+    case "bm":
+    branch = "Bio medical";
+    break;
+    case "bt":
+    branch = "Bio technology";
+    break; 
+}
+
+        if(regex.test(email)){
+alert("Your email id is valid and your branch is "+ branch);
+        }
+        else{
+            alert("Incorrect email id");
+        }
+        }
+    </script>
+
+</head>
+<body>
+    <form>
+        <input id="text" placeholder="Email" type="text"><br>
+        <button type="button" onclick="valid()">Submit</button>
+    </form>
+</body>
+</html>
